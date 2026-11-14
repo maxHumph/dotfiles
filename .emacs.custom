@@ -1,0 +1,22 @@
+;;; -*- lexical-binding: t -*-
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("2c6793f458b7636ffa39194e55a4a6642744d1c278452ad47410bc481395d711"
+     "6acb1819fc6d6983724132506e813ccf489266e1747b031f303b69fc5db117ca"
+     "e8cba528aa84d32d40fec07197fb9c28088b1a2586b5d549e16a97ed820acecd"
+     "e13beeb34b932f309fb2c360a04a460821ca99fe58f69e65557d6c1b10ba18c7"
+     "0180b18504e868a8016991d081dd4d68c80fb5577ce23d830eb483c173924c42"
+     "565eaa908000f370f2e8933f2b2e84dc341e0a8e90e267379e5429b418b177bd"
+     "e9613e59f498d85e2e9f85d9344b10b37d6286309426da4cc041f3179e73ea5f"
+     "f6d2b56b91876224dc569dddeda80969401abe9e96f22db48ba4a8196ad4b175"
+     default)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
