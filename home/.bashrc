@@ -3,6 +3,8 @@ HISTSIZE=10000
 
 PS1="\w \$ "
 
+alias -- l="ls -la"
+
 alias -- h="start-hyprland"
 alias -- neofetch="fastfetch"
 alias -- nixd="nix develop"
