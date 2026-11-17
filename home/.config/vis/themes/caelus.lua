@@ -1,7 +1,7 @@
 local lexers = vis.lexers
 
 local lightyellow = '#efbf71'
-local lightgray = '#9a9c8b'
+local lightgray = '#e0dad0'
 local darkgray = '#1e1f1e'
 
 lexers.STYLE_DEFAULT = 'back:black,fore:white'

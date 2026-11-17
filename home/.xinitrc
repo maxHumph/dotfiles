@@ -7,4 +7,4 @@ setxkbmap -layout gb
 setxkbmap -option ctrl:swapcaps
 
 ~/.local/bin/statusbar &
-exec dwm
+exec dbus-launch --exit-with-session dwm
