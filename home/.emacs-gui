@@ -1,6 +1,8 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; DEFAULT CODE EDITOR STUFF
 
-(setq custom-file "~/.emacs.custom")
+(setq custom-file "~/.emacs-gui.custom")
 
 (menu-bar-mode 0)
 (tool-bar-mode 0)
@@ -102,8 +104,8 @@
 
 ;; KEYBINDS
 
-(global-set-key (kbd "C-x C-k c") #'save-buffers-kill-terminal)
+(global-set-key (kbd "C-x C-c") #'save-buffers-kill-terminal)
 
-(global-set-key (kbd "C-x C-c") #'compile)
+(global-set-key (kbd "C-x C-z") #'compile)
 (global-set-key (kbd "C-x C-b") #'project-compile)
 (global-set-key (kbd "M-x") #'smex)

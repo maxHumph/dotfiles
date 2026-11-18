@@ -2,9 +2,10 @@
 
 - bone = #ddd1bc
 - onyx = #0c0b0a
+- gruber_yellow = #ffdd33
 - blue_slate = #646e78
 - mauve_bark = #7a5c58
-- gruber_yellow = #ffdd33
+- brown = #cc8c3c
 
 ## Terminal Colours
 

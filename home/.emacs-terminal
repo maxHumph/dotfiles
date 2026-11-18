@@ -1,0 +1,104 @@
+;;; -*- lexical-binding: t; -*-
+
+;; DEFAULT CODE EDITOR STUFF
+
+(setq custom-file "~/.emacs-terminal.custom")
+
+(menu-bar-mode 0)
+
+(ido-mode 1)
+(ido-everywhere 1)
+(setq ido-auto-merge-work-directories-length -1)
+
+
+(set-face-attribute 'default nil :family "Iosevka" :height 130)
+
+;; SETUP LINE NUMBERS
+
+(column-number-mode 1)
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode 1)
+
+(dolist (mode '(shell-mode-hook
+		pdf-view-mode-hook
+		vterm-mode-hook
+		term-mode-hook
+		eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+;; SETUP PACKAGE MANAGEMENT
+
+(require 'package)
+
+(setq package-archives
+      '(("gnu"    . "https://elpa.gnu.org/packages/")
+	("nongnu" . "https://elpa.nongnu.org/nongnu/")
+	("melpa" . "https://melpa.org/packages/")))
+
+(package-initialize)
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+
+(setq use-package-always-ensure t)
+(setq package-install-upgrade-built-in t)
+
+;; MISC PACKAGES 
+
+(require 'ansi-color)
+
+;; compile ouput colour
+(defun my/compilation-ansi-color ()
+  (let ((inhibit-read-only t))
+    (ansi-color-apply-on-region
+     compilation-filter-start
+     (point))))
+
+(add-hook 'compilation-filter-hook
+          #'my/compilation-ansi-color)
+
+(use-package diminish)
+
+(use-package warm-mode
+  :diminish warm-mode)
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package smex)
+(smex-initialize)
+
+;; LANGUAGE PACKAGES
+
+(use-package lua-mode)
+(use-package markdown-mode)
+(use-package nix-mode)
+
+;; Simple C by tsoding
+;;(add-to-list 'load-path "~/.emacs.d/emacs.local/")
+;;(require 'simpc-mode)
+;;
+;;(add-to-list 'auto-mode-alist
+;;             '("\\.[c]\\(pp\\)?\\'" . simpc-mode))
+
+
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
+
+;; THEMES
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/my_themes")
+(load-theme 'minimal-terminal t)
+
+;; KEYBINDS
+
+(global-set-key (kbd "C-x C-c") #'save-buffers-kill-terminal)
+
+(global-set-key (kbd "C-x C-z") #'compile)
+(global-set-key (kbd "C-x C-b") #'project-compile)
+(global-set-key (kbd "M-x") #'smex)
