@@ -14,7 +14,7 @@ vis.events.subscribe(vis.events.WIN_OPEN, function(win)
   vis:command("set relativenumbers on")
   vis:command("set autoindent true")
   vis:command("set showspaces false")
-  vis:command("set showtabs true")
+  vis:command("set showtabs false")
   vis:command("set expandtab on")
 end)
 
