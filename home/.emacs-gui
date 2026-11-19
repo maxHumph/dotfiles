@@ -74,8 +74,12 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+
+
 (use-package smex)
 (smex-initialize)
+
+(use-package colorful-mode)
 
 ;; LANGUAGE PACKAGES
 
@@ -96,11 +100,10 @@
 
 ;; THEMES
 
-
-(use-package gruber-darker-theme)
 (use-package doric-themes)
 
-(load-theme 'gruber-darker t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/my_themes")
+(load-theme 'gruber-custom t)
 
 ;; KEYBINDS
 

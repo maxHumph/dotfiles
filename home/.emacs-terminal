@@ -70,6 +70,8 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package colorful-mode)
+
 (use-package smex)
 (smex-initialize)
 
